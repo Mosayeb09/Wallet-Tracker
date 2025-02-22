@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {  Inter } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 // import { Footer } from "react-day-picker";
 import Header from "../components/Header/header"
 
@@ -17,6 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body
         className={`${inter.className}`}>
@@ -32,5 +34,6 @@ export default function RootLayout({
         </footer>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
